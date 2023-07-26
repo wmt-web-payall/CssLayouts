@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    *,
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      /* width: 400px;  */
+      height: 100vh;
+    }
+
+    .text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .partition {
+      flex: 1 1 50%;
+      position: relative;
+    }
+    .partition:nth-child(1) {
+      background-color: lightblue;
+    }
+    .partition:nth-child(2) {
+      background-color: lightgreen;
+      box-sizing: border-box;
+      box-sizing: border-box;
+      border-left: 1px solid rgb(126, 201, 111);
+      border-right: 1px solid green;
+    }
+    .partition:nth-child(3) {
+      background-color: lightyellow;
+      box-sizing: border-box;
+      box-sizing: border-box;
+      border-bottom: 1px solid rgb(173, 171, 34);
+      border-left: 1px solid rgb(173, 171, 34);
+      border-top: 1px solid burlywood;
+    }
+    .partition:nth-child(4) {
+      background-color: rgb(224, 192, 224);
+      box-sizing: border-box;
+      box-sizing: border-box;
+      border-top: 1px solid plum;
+      border-bottom: 1px solid purple;
+      border-left: 1px solid rgb(170, 129, 180);
+      border-right: 1px solid purple;
+    }
+
+    .textcenter {
+      color: white;
+      font-weight: bold;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .text4 {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .partition:nth-child(1) .overlay {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 10px;
+      background-color: blue;
+      height: 15%;
+      width: 30%;
+      box-sizing: border-box;
+    }
+    .partition:nth-child(2) .overlay {
+      position: absolute;
+      background-color: lightyellow;
+      height: 90%;
+      width: 90%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .partition:nth-child(3) .overlay {
+      position: absolute;
+      background-color: blue;
+      height: 15%;
+      width: 30%;
+    }
+    .partition:nth-child(4) .overlay {
+      position: absolute;
+      background-color: blue;
+      height: 15%;
+      width: 30%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    @media screen and (max-width: 576px) {
+      .container {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+      }
+      .partition:nth-child(2) .overlay {
+        position: absolute;
+        background-color: lightyellow;
+        height: 50%;
+        width: 90%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .partition:nth-child(1) .overlay {
+        height: 35%;
+        width: 30%;
+      }
+      .partition:nth-child(3) .overlay {
+        height: 35%;
+        width: 30%;
+      }
+      .partition:nth-child(4) .overlay {
+        height: 35%;
+        width: 30%;
+      }
+    }
+
+    @media screen and (min-width: 1200px) {
+      .textcenter {
+        font-size: 50px;
+      }
+
+      .text {
+        font-size: 50px;
+      }
+      .text4 {
+        font-size: 50px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div
+      class="partition"
+      style="box-sizing: border-box; border-left: 1px solid rgb(2, 22, 29)"
+    >
+      <h3 class="text">1</h3>
+      <div class="overlay textcenter">Child</div>
+    </div>
+    <div class="partition">
+      <h3 class="text4">2</h3>
+      <div class="overlay textcenter"></div>
+    </div>
+    <div class="partition" >
+      <h3 class="text" style="position: absolute">3</h3>
+      <div class="overlay textcenter">Child</div>
+    </div>
+    <div class="partition" >
+      <h3 class="text4">4</h3>
+      <div class="overlay textcenter">Child</div>
+    </div>
+  </div>
+</body>

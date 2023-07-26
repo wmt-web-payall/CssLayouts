@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rotating Box with Hover Effect</title>
+  <style>
+    .box {
+      width: 300px;
+      height: 300px;
+      background-color: #3498db;
+      position: relative;
+      animation: rotate 6s linear infinite;
+      transition: background-color 0.3s ease;
+      cursor: pointer;
+    }
+
+    @keyframes rotate {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .box:hover {
+      background-color: #c28db9;
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+</body>
+</html>
